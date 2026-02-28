@@ -5,15 +5,15 @@ const Navbar = () => {
   const { user } = useAuth();
 
   return (
-    <div className="flex justify-between items-center py-4 px-2 w-full">
-      
+    <div className="flex justify-between items-center py-3 px-3 sm:px-4 md:px-6 w-full gap-2">
+
       {/* Search Bar - Exactly like Dribbble */}
       <div className="relative group flex items-center">
         <Search className="absolute left-4 text-slate-400 group-focus-within:text-[#14532D] transition-colors" size={18} />
         <input
           type="text"
           placeholder="Search task"
-          className="bg-white border border-slate-100 px-11 py-2.5 rounded-2xl outline-none w-[350px] text-sm focus:border-slate-200 focus:shadow-sm transition-all placeholder:text-slate-400 font-medium"
+          className="bg-white border border-slate-100 px-11 py-2.5 rounded-2xl outline-none w-full sm:w-[250px] md:w-[300px] lg:w-[350px] text-sm focus:border-slate-200 focus:shadow-sm transition-all placeholder:text-slate-400 font-medium"
         />
         {/* Keyboard Shortcut Indicator */}
         <div className="absolute right-3 flex items-center gap-1 bg-slate-50 border border-slate-200 px-1.5 py-0.5 rounded-md text-[10px] text-slate-400 font-bold">
@@ -24,7 +24,7 @@ const Navbar = () => {
 
       {/* Right Section: Icons & Profile */}
       <div className="flex items-center gap-6">
-        
+
         {/* Utility Icons */}
         <div className="flex items-center gap-3">
           <button className="p-2.5 bg-white border border-slate-100 rounded-2xl text-slate-500 hover:text-[#14532D] hover:bg-slate-50 transition-all shadow-sm">
@@ -47,7 +47,7 @@ const Navbar = () => {
               {user?.email || "tmichael20@mail.com"}
             </p>
           </div>
-          
+
           <div className="w-11 h-11 rounded-2xl overflow-hidden border-2 border-slate-100 shadow-sm transition-transform hover:scale-105 cursor-pointer bg-amber-100">
             <img
               src={user?.avatar || "https://api.dicebear.com/7.x/avataaars/svg?seed=Michael"}
