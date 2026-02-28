@@ -172,51 +172,51 @@ const Dashboard = () => {
 
             {/* Team Collaboration */}
             <div className="bg-white p-4 sm:p-6 lg:p-8 rounded-[32px] w-full lg:max-w-[90%] border border-slate-100 shadow-[0_10px_30px_rgba(0,0,0,0.05)]">
-  
-  <div className="flex justify-between items-center mb-4">
-    <h2 className="text-xl font-bold text-slate-900">
-      Team Collaboration
-    </h2>
-    <button className="text-xs font-bold border border-green-800 px-4 py-2 rounded-full text-[#14532D] hover:bg-slate-50">
-      + Add Member
-    </button>
-  </div>
 
-  {/* Scrollable Users List */}
-  <div className="space-y-3 max-h-[280px] overflow-auto pr-2">
-    {users && users.length > 0 ? (
-      users.map((member) => {
-        const statusColor =
-          member.status === "active"
-            ? "bg-emerald-50 text-emerald-600"
-            : member.status === "inactive"
-            ? "bg-amber-50 text-amber-600"
-            : "bg-red-50 text-red-400";
+              <div className="flex justify-between items-center mb-4">
+                <h2 className="text-xl font-bold text-slate-900">
+                  Team Collaboration
+                </h2>
+                <button className="text-xs font-bold border border-green-800 px-4 py-2 rounded-full text-[#14532D] hover:bg-slate-50">
+                  + Add Member
+                </button>
+              </div>
 
-        return (
-          <div key={member.id} className="flex items-center justify-between">
-            <div className="flex items-center gap-3">
-              <img
-                src={`https://api.dicebear.com/7.x/avataaars/svg?seed=${member.name}`}
-                className="w-10 h-10 rounded-full border-2 border-white shadow-sm bg-slate-100"
-                alt={member.name}
-              />
-              <div>
-                <p className="text-sm font-bold text-slate-900">{member.name}</p>
-                <p className="text-xs text-slate-400">{member.email}</p>
+              {/* Scrollable Users List */}
+              <div className="space-y-3 max-h-[280px] overflow-auto pr-2">
+                {users && users.length > 0 ? (
+                  users.map((member) => {
+                    const statusColor =
+                      member.status === "active"
+                        ? "bg-emerald-50 text-emerald-600"
+                        : member.status === "inactive"
+                          ? "bg-amber-50 text-amber-600"
+                          : "bg-red-50 text-red-400";
+
+                    return (
+                      <div key={member.id} className="flex items-center justify-between">
+                        <div className="flex items-center gap-3">
+                          <img
+                            src={`https://api.dicebear.com/7.x/avataaars/svg?seed=${member.name}`}
+                            className="w-10 h-10 rounded-full border-2 border-white shadow-sm bg-slate-100"
+                            alt={member.name}
+                          />
+                          <div>
+                            <p className="text-sm font-bold text-slate-900">{member.name}</p>
+                            <p className="text-xs text-slate-400">{member.email}</p>
+                          </div>
+                        </div>
+                        <span className={`text-xs font-bold px-3 py-1 rounded-md border ${statusColor}`}>
+                          {member.status}
+                        </span>
+                      </div>
+                    );
+                  })
+                ) : (
+                  <div className="text-sm text-slate-400">No team members found</div>
+                )}
               </div>
             </div>
-            <span className={`text-xs font-bold px-3 py-1 rounded-md border ${statusColor}`}>
-              {member.status}
-            </span>
-          </div>
-        );
-      })
-    ) : (
-      <div className="text-sm text-slate-400">No team members found</div>
-    )}
-  </div>
-</div>
           </div>
 
           {/*  COLUMN 2  */}

@@ -1,5 +1,6 @@
 import { Bell, Mail, Search, Command } from "lucide-react";
 import useAuth from "../hooks/useAuth";
+import defaultUser from "../assets/user.png";
 
 const Navbar = () => {
   const { user } = useAuth();
@@ -38,6 +39,8 @@ const Navbar = () => {
         </div>
 
         {/* User Profile Section */}
+
+
         <div className="flex items-center gap-3 pl-4">
           <div className="text-right hidden sm:block">
             <h4 className="text-[14px] font-bold text-slate-900 leading-tight">
@@ -50,7 +53,7 @@ const Navbar = () => {
 
           <div className="w-11 h-11 rounded-2xl overflow-hidden border-2 border-slate-100 shadow-sm transition-transform hover:scale-105 cursor-pointer bg-amber-100">
             <img
-              src={user?.avatar || "https://api.dicebear.com/7.x/avataaars/svg?seed=Michael"}
+              src={user?.avatar || defaultUser}
               alt="Profile"
               className="w-full h-full object-cover"
             />
