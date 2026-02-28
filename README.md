@@ -6,7 +6,7 @@ A modern, responsive, and fully functional **Task Management Dashboard** built w
 
 ## Live Demo
 
-🔗 Deployment Link: donezo-six.vercel.app
+🔗 Deployment Link: https://donezo-six.vercel.app
 
 🔗 GitHub Repository: https://github.com/musfikabushra/Donezo.git
 
