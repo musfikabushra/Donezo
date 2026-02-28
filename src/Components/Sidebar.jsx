@@ -12,6 +12,7 @@ import {
 } from "lucide-react";
 import useAuth from "../hooks/useAuth";
 import donezoLogo from "../assets/donezo.png";
+import abstractWave from "../assets/abstractwave.png";
 
 const Sidebar = () => {
   const { logout } = useAuth();
@@ -71,8 +72,8 @@ const Sidebar = () => {
       
       {/* Logo Section */}
       <div className="flex items-center gap-2 px-8 mb-12">
-        <img src={donezoLogo} alt="Donezo" className="w-10 h-10 object-contain" />
-        <span className="text-2xl font-bold text-slate-900 tracking-tight">Donezo</span>
+        <img src={donezoLogo} alt="Donezo" className="w-15 h-15 object-contain" />
+        <span className="text-2xl font-semibold text-slate-900 tracking-tight">Donezo</span>
       </div>
 
       <div className="flex-1 overflow-y-auto no-scrollbar">
@@ -102,28 +103,55 @@ const Sidebar = () => {
         </div>
       </div>
 
-      {/* Download Mobile App Promo Card (From Image) */}
+    {/* Download Mobile App Promo Card */}
 
-      <div className="px-6 mt-auto">
-        <div className="bg-gradient-to-br from-[#0a281e] to-[#14532D] p-5 rounded-[2rem] relative overflow-hidden group shadow-lg shadow-green-900/20">
+{/* Download App Sidebar Card */}
+<div className="px-4 mt-auto mb-6">
+  <div className="relative p-6 rounded-[32px] overflow-hidden bg-[#04160E] group cursor-pointer">
+    {/* Abstract Wave Background - Image match */}
+    <div 
+      className="absolute inset-0 opacity-80"
+      style={{
+        backgroundImage: `url(${abstractWave})`,
+        backgroundSize: '150%',
+        backgroundPosition: 'top right',
+        backgroundRepeat: 'no-repeat',
+      }}
+    />
+    
+    {/* Dark Overlay for better text readability */}
+    <div className="absolute" />
 
-            {/* Background Abstract Pattern */}
-            <div className="absolute top-0 right-0 opacity-10">
-                <Download size={80} strokeWidth={1} />
-            </div>
-            
-            <div className="relative z-10 text-center">
-                <div className="w-10 h-10 bg-white/10 backdrop-blur-md rounded-xl flex items-center justify-center mx-auto mb-3">
-                    <Download className="text-white" size={18} />
-                </div>
-                <h4 className="text-white text-sm font-bold leading-tight mb-1">Download our<br/>Mobile App</h4>
-                <p className="text-emerald-400/70 text-[10px] mb-4">Get easy in another way</p>
-                <button className="w-full bg-emerald-500 hover:bg-emerald-400 text-[#0a281e] text-[12px] font-extrabold py-2.5 rounded-xl transition-all shadow-sm">
-                    Download
-                </button>
-            </div>
+    {/* Content */}
+    <div className="relative z-10">
+      {/* White Badge Icon */}
+      <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center mb-3 shadow-lg">
+        <div className="relative">
+          {/* Custom Award/Badge Icon style from image */}
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#064e3b" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+            <circle cx="12" cy="8" r="6" />
+            <path d="M15.41 14.12l1.39 5.22L12 17l-4.8 2.34 1.39-5.22" />
+          </svg>
         </div>
       </div>
+
+      {/* Title with larger font */}
+      <h4 className="text-white text-2xl leading-[1.15] mb-2 tracking-tight">
+        Download our <br /> Mobile App
+      </h4>
+
+      {/* Subtitle */}
+      <p className="text-slate-300 text-[13px] font-medium mb-6 opacity-90">
+        Get easy in another way
+      </p>
+
+      {/* Download Button */}
+      <button className="w-full bg-[#14532D] hover:bg-[#1a6638] text-white text-[15px] font-bold py-3.5 rounded-[18px] transition-all duration-300 shadow-md">
+        Download
+      </button>
+    </div>
+  </div>
+</div>
 
     </div>
   );

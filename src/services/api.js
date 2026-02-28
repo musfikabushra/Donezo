@@ -9,9 +9,10 @@ const API = axios.create({
 });
 
 // automatically attach bearer token if present in localStorage
+// but skip the fake demo token so public endpoints still work
 API.interceptors.request.use((config) => {
   const token = localStorage.getItem("token");
-  if (token) {
+  if (token && token !== "demo-token") {
     config.headers = config.headers || {};
     config.headers.Authorization = `Bearer ${token}`;
   }
