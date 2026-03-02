@@ -41,7 +41,7 @@ A modern, responsive, and fully functional **Task Management Dashboard** built w
 
 **API Handling**
 
-* Axios / Fetch API
+* Axios
 
 **State Management**
 
@@ -49,7 +49,7 @@ A modern, responsive, and fully functional **Task Management Dashboard** built w
 
 **Deployment**
 
-* Vercel / Netlify
+* Vercel
 
 
 ---
